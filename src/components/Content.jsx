@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Content.css"
+
 const API_URL = import.meta.env.VITE_API_URL
+
 function Content() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
   const [products, setProducts] = useState([]);
   const increment = () => {
     setCount(count + 1);
@@ -21,22 +23,22 @@ function Content() {
   }, []);
   return (
     <div>
-      {/* <h3>Products Page</h3> */}
+     
       {/* <button onClick={decrement}>-</button>
       {count}
       <button onClick={increment}>+</button>
       <hr /> */}
       <div className="row">
         {products.map((product) => (
-        <div className="box">
-          <img src={`${API_URL}/${product.imageUrl}`} width="300px" alt=""></img>
-          <h3>{product.name}</h3>
-          <p>{product.desc}</p>
-          <h3>{product.price}</h3>
-          <p><button>Add to Cart</button></p>
-        </div>
+          <div className="box">
+            <img src={`${API_URL}/${product.imageUrl}`} width="300px" alt="" />
+            <h3>{product.name}</h3>
+            <p>{product.desc}</p>
+            <h4>{product.price}</h4>
+            <p><button>Add to Cart</button></p>
+          </div>
         ))}
-        </div>
+      </div>
     </div>
   );
 }
