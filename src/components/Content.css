@@ -1,6 +1,7 @@
 .row {
     display: flex;
-    flex-wrap: 5px;
+    flex-wrap: wrap;
+    padding: 5px;
 }
 .box{
     border: 1px solid grey;
